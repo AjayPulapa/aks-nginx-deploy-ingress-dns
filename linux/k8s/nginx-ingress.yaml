@@ -1,18 +1,24 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
+
 metadata:
   name: nginx-ingress
   namespace: nginx-dev
+
 spec:
   ingressClassName: nginx
+
   rules:
-  - host: nginxdemo.centralindia.cloudapp.azure.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nginx-web-service
-            port:
-              number: 80
+    - host: ajaypulapa-nginx.centralindia.cloudapp.azure.com
+
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+
+            backend:
+              service:
+                name: nginx-web-service
+
+                port:
+                  number: 80
