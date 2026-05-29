@@ -7,3 +7,24 @@ This project contains:
 - AKS setup
 - NGINX ingress
 - Azure DNS mapping
+
+az network public-ip update \
+  --resource-group MC_rg-nginx-dev_aks-nginx-dev_centralindia \
+  --name kubernetes-ad9e61e5035a64564981bbfaa0b349b1 \
+  --dns-name ajaypulapa-nginx
+
+  az network public-ip show \
+  --resource-group MC_rg-nginx-dev_aks-nginx-dev_centralindia \
+  --name kubernetes-ad9e61e5035a64564981bbfaa0b349b1 \
+  --query dnsSettings.fqdn
+
+  ajaypulapa-nginx.centralindia.cloudapp.azure.com
+
+  kubectl apply -f nginx-ingress.yaml
+
+  kubectl get ingress -n nginx-dev
+
+  HOSTS
+ajaypulapa-nginx.centralindia.cloudapp.azure.com
+
+http://ajaypulapa-nginx.centralindia.cloudapp.azure.com
