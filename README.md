@@ -28,3 +28,14 @@ az network public-ip update \
 ajaypulapa-nginx.centralindia.cloudapp.azure.com
 
 http://ajaypulapa-nginx.centralindia.cloudapp.azure.com
+
+
+
+------------------------------------------------------
+kubectl get endpoints -n nginx-dev
+
+kubectl describe svc nginx-web-service -n nginx-dev
+
+kubectl get pods -n nginx-dev --show-labels
+
+kubectl describe ingress nginx-ingress -n nginx-dev
